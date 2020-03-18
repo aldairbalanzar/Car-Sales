@@ -25,8 +25,8 @@ export const appReducer = (state = initialState, action) => {
               car: {
                 ...state.car,
                 features: state.car.features.filter(item => item !== action.payload),
-                price: state.car.price - action.payload.price
-              }
+              },
+              additionalPrice: state.additionalPrice - action.payload.price
             };
           case ADD_FEATURE: 
             return {
@@ -34,8 +34,8 @@ export const appReducer = (state = initialState, action) => {
               car: {
                 ...state.car,
                 features: [...state.car.features, action.payload],
-                price: state.car.price + action.payload.price
-              }
+              },
+              additionalPrice: state.additionalPrice + action.payload.price
             }
           default:
               return state
